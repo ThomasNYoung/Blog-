@@ -42,12 +42,45 @@
             <li><a href="{{ action('PostsController@create') }}">Create Post</a></li>
             <li><a href="{{ action('HomeController@doLogout') }} ">Logout</a></li>
             @else
-            <li><a href="{{ action('HomeController@doLogin') }}">Login</a></li>
+            <li><a  data-toggle="modal" data-target="#myModal"href="#">Login</a></li>
             @endif
+            <li><a href="{{ action('HomeController@showResume') }} ">My Resume</a></li>
+            
+
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">login</h4>
+                </div>
+                    <div class="modal-body">
+                            
+                    {{ Form::open(array('action' => 'HomeController@doLogin')) }}
+                        <div class="form-group " autofocus>
+                            {{ Form::label('email', 'eMail Address') }}
+                            {{ Form::email('email', Input::old('email'), array('class' => 'form-control')) }}
+                        </div>
+                            <div class="form-group">
+                                {{ Form::label('password', 'Password') }}
+                                {{ Form::password('password', array('class' => 'form-control')) }}
+                            </div>
+                        <div class="form-group">
+                        </div>
+                    </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                    
+                </div>
+                {{ Form::close() }}
+            </div>
+        </div>
+    </div>
 
     <div class="container" style="padding-top: 50px">
 

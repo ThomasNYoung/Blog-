@@ -15,7 +15,7 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::paginate(10);
+		$posts = Post::paginate(6);
 		return View::make('posts.index')->with(array('posts' => $posts));
 	}
 
@@ -47,10 +47,13 @@ class PostsController extends \BaseController {
             return Redirect::back()->withInput()->withErrors($validator);
         } else {
             // validation succeeded, create and save the post
+            $directory = 'img/uploads/';
             $post = new Post;
             $post->title = Input::get('title');
             $post->body = Input::get('body');
             $post->user_id = Auth::id();
+            $post->img_path = Input::file('img_path')->move($directory);
+            $post->img_path = '/' . $post->img_path;
             $post->save();
             Session::flash('successMessage', 'You created ' . $post->title . ' post successfully');
             return Redirect::action('PostsController@index');

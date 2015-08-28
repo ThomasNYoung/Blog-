@@ -4,7 +4,7 @@
     
     <h1>{{ $post->title }}</h1>
 
-    {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
+    {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT', 'files'=>true)) }}
         @include('posts.create-edit-form')
     {{ Form::close() }}
 

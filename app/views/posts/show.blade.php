@@ -1,12 +1,14 @@
 @extends('layouts.master')
 
 @section('content')
+    
+    <img src=" {{{$post->img_path}}} " style="padding-top:65px;"></img>
 
     <h2>{{{ $post->title }}}</h2>
 
     <p><em> By {{{ $post->user->first_name }}} {{{ $post->user->last_name }}}</em></p>
 
-    <p>{{{ $post->body }}}</p>
+    <p class="container col-md-6" style="padding-bottom: 50px;">{{{ $post->body }}}</p>
 
     @if(Session::has('test'))
         {{ Session::get('test') }}

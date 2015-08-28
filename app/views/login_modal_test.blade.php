@@ -1,9 +1,7 @@
-@extends('layouts.master')
-
-@section('content')
-
 <!-- Button trigger modal -->
-
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  <a href="{{ action('HomeController@doLogin') }}">Login</a>
+</button>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -14,19 +12,7 @@
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-        {{ Form::open(array('action' => 'HomeController@doLogin')) }}
-          <div class="form-group">
-              {{ Form::label('email', 'eMail Address') }}
-              {{ Form::email('email', Input::old('email'), array('class' => 'form-control')) }}
-          </div>
-          <div class="form-group">
-              {{ Form::label('password', 'Password') }}
-              {{ Form::password('password', array('class' => 'form-control')) }}
-          </div>
-          <div class="form-group">
-              <button type="submit" class="btn btn-primary">Log In</button>
-          </div>
-        {{ Form::close() }}
+        ...
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -35,4 +21,3 @@
     </div>
   </div>
 </div>
-@stop

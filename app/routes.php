@@ -68,3 +68,11 @@ Route::resource('posts', 'PostsController');
 Route::get('login', 'HomeController@showLogin');
 Route::post('login', 'HomeController@doLogin');
 Route::get('logout', 'HomeController@doLogout');
+
+// Route::get('form', function(){
+//  return View::make('form');
+// });
+
+// Route::any('form-submit', function(){
+//  var_dump(Input::file('file'));
+// });

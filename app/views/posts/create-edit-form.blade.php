@@ -8,4 +8,14 @@
     {{ Form::textarea('body', null, ['class' => 'form-control']) }}
 </div>
 
+<div class="form-group">
+	
+	{{ Form::file('img_path') }}
+</div>
+  
+
 <button class="btn btn-primary">Save</button>
+
+
+
+

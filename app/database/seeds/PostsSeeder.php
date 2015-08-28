@@ -13,6 +13,7 @@ class PostsSeeder extends Seeder {
 			$post->title = $faker->catchPhrase;
 			$post->body = $faker->realText;
 			$post->user_id = User::all()->random(1)->id;
+			$post->img_path = $faker->imageUrl($width = 640, $height = 480);
 			$post->save();
 		}
 		
