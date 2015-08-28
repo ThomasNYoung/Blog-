@@ -65,6 +65,10 @@ Route::resource('posts', 'PostsController');
 // });
 // 
 
+Route::get('/', function(){
+	return Redirect::action('PostsController@index');
+});
+
 Route::get('login', 'HomeController@showLogin');
 Route::post('login', 'HomeController@doLogin');
 Route::get('logout', 'HomeController@doLogout');
