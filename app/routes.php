@@ -69,8 +69,19 @@ Route::get('/', function(){
 	return Redirect::action('PostsController@index');
 });
 
+Route::get('portfolio', 'HomeController@showPortfolio');
+
+Route::get('test_index', 'HomeController@showTestIndex');
+
+Route::get('simple_simon', 'HomeController@showSimon');
+
+Route::get('whack', 'HomeController@showWhack');
+
+
 Route::get('login', 'HomeController@showLogin');
+
 Route::post('login', 'HomeController@doLogin');
+
 Route::get('logout', 'HomeController@doLogout');
 
 // Route::get('form', function(){
