@@ -20,10 +20,20 @@ class HomeController extends BaseController {
         return View::make('hello');
     }
 
+    // public function showPosts()
+    // {
+    //     return View::make('posts');
+    // }
+
     public function showResume()
     {
     	return View::make('resume');
     }
+
+    // public function showIndex()
+    // {
+    //   return View::make('index');
+    // }
 
     public function showPortfolio()
     {
@@ -43,6 +53,11 @@ class HomeController extends BaseController {
     public function showWhack()
     {
       return View::make('whack');
+    }
+
+     public function showHome()
+    {
+      return View::make('home');
     }
 
     public function showLogin()

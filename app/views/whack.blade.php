@@ -3,23 +3,46 @@
 @section('content')
 
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Whack-a-Square</title>
-	<link rel="stylesheet" href="/css/whack-a-mole.css">
-	<!-- <link rel="stylesheet" href="/js/whack-a-mole.js"> -->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-</head>
-<body>
+<link rel="stylesheet" href="/whack-a-mole.css">
+<div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Click a Box!</h2>
+                    <hr>
+                    <!-- <img class="img-responsive img-border img-left" src="img/intro-pic.jpg" alt=""> -->
+                    <hr class="visible-xs">
+                    <div>
+						<div class='container'>
+							<div class='content' id='wrapper'>
+							
+							<button class='start btn btn-lrg btn-primary btn-block'  id='start'>Rock n Roll!</button>
+							<input type='text' id='score' readonly=""> <br>
+							<input type='text' id='high score' readonly=''><br>
+								<div class='mole second' id='0'></div>
+								<div class='mole second' id='1'></div>
+								<div class='mole second' id='2'></div>
+								<div class='mole second' id='3'></div>
+								<div class='mole second' id='4'></div>
+								<div class='mole second' id='5'></div>
+								<div class='mole second' id='6'></div>
+								<div class='mole second' id='7'></div>
+								<div class='mole second' id='8'></div>
+							</div>
+						</div>
+                </div>
+            </div>
+        </div>
+    </div>
+					               
+
+
+
+<!-- <div>
 	<div class='container'>
 		<div class='content' id='wrapper'>
-		<h1>Click a box</h1>
+		
 		<button class='start btn btn-lrg btn-primary btn-block'  id='start'>Rock n Roll!</button>
 		<input type='text' id='score' readonly=""> <br>
 		<input type='text' id='high score' readonly=''><br>
@@ -33,10 +56,10 @@
 			<div class='mole second' id='7'></div>
 			<div class='mole second' id='8'></div>
 		</div>
-	</div>
+	</div> -->
 	<script>
 	'use strict';
-	
+	$(document).ready(function(){
 	
 	var random
 	var intervalId
@@ -103,11 +126,12 @@
 	}
 	        
 		
-$('#start').click(popupBox);
+	$('#start').click(popupBox);
 
 	</script>
-</body>
-</html>
+	});
+</div>
+
 @stop         
            
 	    

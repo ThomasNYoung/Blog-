@@ -65,11 +65,14 @@ Route::resource('posts', 'PostsController');
 // });
 // 
 
+
 Route::get('/', function(){
-	return Redirect::action('PostsController@index');
+	return Redirect::action('HomeController@showHome');
 });
 
 Route::get('portfolio', 'HomeController@showPortfolio');
+
+// Route::get('index', 'HomeController@showIndex');
 
 Route::get('test_index', 'HomeController@showTestIndex');
 
@@ -83,6 +86,9 @@ Route::get('login', 'HomeController@showLogin');
 Route::post('login', 'HomeController@doLogin');
 
 Route::get('logout', 'HomeController@doLogout');
+
+Route::get('home', 'HomeController@showHome');
+
 
 // Route::get('form', function(){
 //  return View::make('form');

@@ -1,3 +1,6 @@
+@extends(layouts.master)
+@section('content')
+
 <div class="form-group @if($errors->has('title')) has-error @endif">
     {{ Form::label('title', 'Title') }}
     {{ Form::text('title', null, ['class' => 'form-control']) }}
@@ -17,5 +20,5 @@
 <button class="btn btn-primary">Save</button>
 
 
-
+@stop
 

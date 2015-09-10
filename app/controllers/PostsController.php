@@ -13,6 +13,8 @@ class PostsController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+
+
 	public function index()
 	{
 		$posts = Post::paginate(6);
@@ -117,11 +119,32 @@ class PostsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
+	// public function destroy($id)
+	// {
+	// 	Post::find($id)->delete();
+ //        return Redirect::action('PostsController@index');
+	// }
+
 	public function destroy($id)
-	{
-		Post::find($id)->delete();
-        return Redirect::action('PostsController@index');
-	}
-
-
+    {
+        // ...
+        
+        // Modify destroy() to send back JSON if it's been requested
+        if (Request::wantsJson()) {
+            return Response::json(array('return'=>'deleted'));
+        } else {
+            return Redirect::action('PostsController@index');
+        }
+    }
 }
+
+	// public function getManage()
+ //    {
+ //        return View::make('posts.manage');
+ //    }
+    
+ //    public function getList()
+ //    {
+ //        $posts = Post::with('user')->get();
+ //        return Response::json($posts);
+ //    }
